@@ -1,0 +1,254 @@
+$primary: #55B436
+
+$theme-colors: ( "primary": $primary)
+
+@import "ember-mdi"
+@import "ember-bootstrap/bootstrap"
+
+body
+    font-family: 'Titillium Web', sans-serif
+    color: #37383B
+    background: transparent
+
+input.form-control, textarea.form-control
+    background: #FAFAFA
+    border: 2px solid #D9DFE5
+
+a
+    transition: 0.5s all
+    &:hover
+        transition: 0.5s all
+
+h3
+    display: block
+    margin: 0 auto 4rem auto
+    text-align: center
+    font-size: 2rem
+    color: $primary
+    position: relative
+    strong
+        color: #4b9a2b
+    &::after
+        content: ""
+        position: absolute
+        bottom: -2rem
+        left: 50%
+        transform: translateX(-50%) translateY(50%)
+        display: block
+        width: 132px
+        height: 24px
+        background: url("../img/heading-separator.svg") no-repeat
+
+header
+    overflow: visible
+    padding: 0.5rem 0
+    background: #fff
+    border-bottom: 2px solid #4b9a2b
+    z-index: 10
+    img
+        display: block
+        width: 12rem
+        height: auto
+    nav.navbar-nav
+        flex-direction: row
+        margin-right: 2rem
+        a
+            display: flex
+            padding: 1rem
+            font-weight: bold
+            position: relative
+            &::after
+                content: ""
+                display: block
+                height: 2px
+                width: 100%
+                left: 0
+                background: #fff
+                position: absolute
+                transition: 0.5s all
+                bottom: -0.5rem
+            &:hover
+                text-decoration: none
+            &.active::after, &:hover::after
+                bottom: 0
+                background: #4b9a2b
+                transition: 0.5s all
+
+#banner
+    padding: 10rem 0
+    z-index: 2
+    color: #fff
+    overflow: hidden
+    position: relative
+    min-height: 36rem
+    h1
+        font-weight: bold
+    h2
+        color: #FFFCC9
+    h1, h2
+        opacity: 0
+        -webkit-animation: fade-in-slide-in-left 2s
+        -moz-animation: fade-in-slide-in-left 2s
+        -ms-animation: fade-in-slide-in-left 2s
+        -o-animation: fade-in-slide-in-left 2s
+        animation: fade-in-slide-in-left 2s
+        animation-fill-mode: forwards
+        -webkit-animation-delay: 1s
+        -moz-animation-delay: 1s
+        -ms-animation-delay: 1s
+        -o-animation-delay: 1s
+        animation-delay: 1s
+
+#top-decor
+    position: absolute
+    width: 110%
+    height: 87rem
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    margin-left: 50%
+    z-index: -1
+    border-radius: 8rem
+    background: $primary url("../img/background-g.svg") no-repeat 50% 150%
+    overflow: hidden
+    -webkit-animation: fade-in-rotate 2s
+    -moz-animation: fade-in-rotate 2s
+    -ms-animation: fade-in-rotate 2s
+    -o-animation: fade-in-rotate 2s
+    animation: fade-in-rotate 2s
+    animation-fill-mode: forwards
+    z-index: -1
+
+.section
+    padding: 10rem 0
+    &.intro
+        padding: 5rem 0
+        p
+            font-size: 1.5rem
+    &.products
+        padding: 5rem 0
+        .wrap
+            padding: 5rem 0
+            background: #eee
+        .product
+            background: #fff
+            border-radius: 0.5rem
+            padding: 2rem
+            box-shadow: 0 4px 14px rgba(42, 52, 59, 0.05)
+            h4
+                color: $primary
+                font-weight: bold
+        .row > div:first-of-type .product
+            border-bottom-left-radius: 6rem
+        .row > div:last-of-type .product
+            border-top-right-radius: 6rem
+    &.carousel
+        padding: 5rem 0 0 0
+        .wrap
+            position: relative
+            padding: 5rem 0
+            background: $primary
+            color: #fff
+        .index
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 5rem
+            height: 5rem
+            position: absolute
+            top: -7.5rem
+            left: -5rem
+            font-size: 2.5rem
+            line-height: 2.5rem
+            font-weight: bold
+            z-index: 0
+            &::before
+                background: #473C39
+                display: block
+                content: ''
+                width: 100%
+                height: 100%
+                border-radius: 1rem
+                position: absolute
+                z-index: -1
+                transform: rotate(45deg)
+                top: 0
+                left: 0
+    &.contact
+        padding: 5rem 0
+        overflow: hidden
+        position: relative
+        color: #fff
+        h3
+            margin-bottom: 6rem
+        form
+            border: 2px solid #4b9a2b
+            background: #fff
+            border-radius: 0.5rem
+            color: #37383B
+            padding: 2rem
+        .details
+            flex-direction: column
+            justify-content: flex-end
+            display: flex
+            padding: 0 0 0 2rem
+            h5
+                font-weight: bold
+                color: #FFFCC9
+            ol
+                margin: 0
+                padding: 0 0 0 1rem
+                max-width: 23rem
+
+#bottom-decor
+    position: absolute
+    width: 110%
+    height: 87rem
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    margin-left: 50%
+    z-index: -1
+    top: 25rem
+    transform: translateX(-50%) rotateZ(6deg)
+    border-radius: 8rem
+    background: $primary url("../img/background-g.svg") no-repeat 50% 0%
+    overflow: hidden
+    z-index: -1
+
+footer
+    display: flex
+    padding: 5rem
+    background: #463c3a
+    color: #fff
+    p
+        text-align: center
+
+// ANIMATIONS
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(fade-in-rotate)
+  0%
+    top: -60rem
+    opacity: 0
+    transform: translateX(-50%) rotateZ(0deg)
+  100%
+    top: -56rem
+    opacity: 1
+    transform: translateX(-50%) rotateZ(6deg)
+
++keyframes(fade-in-slide-in-left)
+  0%
+    opacity: 0
+    transform: translateX(-2rem)
+  100%
+    opacity: 1
+    transform: translateX(0)

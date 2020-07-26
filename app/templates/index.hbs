@@ -1,0 +1,154 @@
+<div id="banner">
+    <div class="container">
+        <h1>Verhuur uw dak, Verdien direct!</h1>
+        <h2>Zonder investering verdienen aan uw dak!</h2>
+    </div>
+    <div id="top-decor"></div>
+</div>
+
+
+<div class="section intro">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-8">
+                <h3>Verhuur uw dak, <strong>verdien direct</strong></h3>
+                <p><strong>Uw dak verhuren, gratis zonnepanelen erop, en direct verdienen?</strong><br/>Wij regelen het voor u. Zonder gedoe. Door heel Nederland huren we daken en plaatsen we zonnesystemen. Is uw dak groter dan 3.500 m2 en wilt u ook duurzaam verdienen? Xaam. future energy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section products">
+    <h3>Wat we <strong>doen</strong></h3>
+    <div class="wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 text-center">
+                    <div class="product">
+                        <h4>Klimaattechniek</h4>
+                        <p>Creeer op een duurzame manier het optimale binnenklimaat</p>
+                        <LinkTo @route="product.klimaattechniek" class="btn btn-primary">Learn more...</LinkTo>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="product">
+                        <h4>Dakverhuur</h4>
+                        <p>Uw dak verhuren, gratis zonnepanelen erop en direct verdienen</p>
+                        <LinkTo @route="product.dakhuur" class="btn btn-primary">Learn more...</LinkTo>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="product">
+                        <h4>Led verlichting</h4>
+                        <p>Direct energie besparen op een goedkope en makkelijke manier</p>
+                        <LinkTo @route="product.led-verlichting" class="btn btn-primary">Learn more...</LinkTo>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section carousel">
+    <h3>Onze producten en diensten<br/><strong>uw voordelen</strong></h3>
+    <div class="wrap">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-md-6">
+                    <span class="index">{{this.carouselIndex}}</span>
+                    <BsCarousel
+                        @autoPlay={{true}}
+                        @wrap={{true}}
+                        @index={{0}}
+                        @interval={{5000}}
+                        @keyboard={{true}}
+                        @ltr={{true}}
+                        @pauseOnMouseEnter={{true}}
+                        @showControls={{true}}
+                        @showIndicators={{false}}
+                        @onSlideChanged={{action "slideChanged"}}
+                        as |car|>
+                            {{#each this.slides as |slide|}}
+                                <car.slide>
+                                    <img src={{slide.img}}/>
+                                    <h5>{{slide.title}}</h5>
+                                    <p>{{slide.text}}</p>
+                                </car.slide>
+                            {{/each}}
+                    </BsCarousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section contact">
+    <div id="bottom-decor"></div>
+    <div class="container" id="contact-us">
+        <h3>Contact Our Sales Team</h3>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form>
+                    <div class="form-group row">
+                        <label for="first-name" class="col-sm-4 col-form-label">First Name</label>
+                        <div class="col-sm-8">
+                            <Input id="first-name" name="first-name" @type="text" class="form-control" placeholder="John" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="last-name" class="col-sm-4 col-form-label">Last Name</label>
+                        <div class="col-sm-8">
+                            <Input id="last-name" name="last-name" @type="text" class="form-control" placeholder="Smith" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <Input id="email" name="email" @type="text" class="form-control" placeholder="name@company.com" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
+                        <div class="col-sm-8">
+                            <Input id="phone" name="phone" @type="text" class="form-control" placeholder="(123) 456-5934" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="subject" class="col-sm-4 col-form-label">Subject</label>
+                        <div class="col-sm-8">
+                            <Input id="subject" name="subject" @type="text" class="form-control" placeholder="What is this about?" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-4 col-form-label">Want a roof scan?</label>
+                        <div class="col-sm-8">
+                            <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                                <label class="btn btn-secondary{{if this.wantScan ' active' ''}}" {{action (mut this.wantScan) true}}>
+                                    <Input id="scan-yes" @type="radio" name="scan" @checked={{this.wantScan}} /> Yes
+                                </label>
+                                <label class="btn btn-secondary{{if (not this.wantScan) ' active' ''}}" {{action (mut this.wantScan) false}}>
+                                    <Input id="scan-yes" @type="radio" name="scan" @checked={{not this.wantScan}} /> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="message" class="col-sm-4 col-form-label">Anything else?</label>
+                        <div class="col-sm-8">
+                            <textarea id="message" name="message" class="form-control" placeholder="Your message or additional details..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-6 details">
+                <h5>Waarom Greenovate</h5>
+                <ol>
+                    <li>Wij recuderen uw tijdinvestering tot het minimum / Wij brengen u gemak en tijdbesparing</li>
+                    <li>Alleen A-merken</li>
+                    <li>van A tot Z geregeld</li>
+                    <li>Geen gedoe</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

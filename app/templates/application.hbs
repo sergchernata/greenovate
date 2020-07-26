@@ -1,5 +1,32 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <LinkTo @route="index">
+            <img src="img/logo.svg" alt="Greenovate logo" />
+        </LinkTo>
+        <nav class="navbar-nav ml-auto d-sm-none d-md-flex flex-direction-row">
+            <LinkTo @route="product.klimaattechniek">
+                Klimaattechniek
+            </LinkTo>
+            <LinkTo @route="product.dakhuur">
+                Dakverhuur
+            </LinkTo>
+            <LinkTo @route="product.led-verlichting">
+                Led Verlichting
+            </LinkTo>
+        </nav>
 
-{{outlet}}
+        <a class="btn btn-primary" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Get a Quote</a>
+
+        <button data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation" class="navbar-toggler collapsed d-sm-block d-md-none" type="button">
+            <MdIcon @icon="menu"/>
+        </button>
+    </div>
+</header>
+
+<body>
+    {{outlet}}
+</body>
+
+<footer>
+    <p>&copy; Greenovate 2020</p>
+</footer>
