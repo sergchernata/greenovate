@@ -12,4 +12,5 @@ Router.map(function() {
     this.route('led-verlichting');
     this.route('dakhuur');
   });
+  this.route('over-ons');
 });
