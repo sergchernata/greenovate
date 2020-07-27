@@ -17,6 +17,9 @@ input.form-control, textarea.form-control
 .nm
     margin: 0
 
+.mb0
+    margin-bottom: 0
+
 a
     transition: 0.5s all
     &:hover
@@ -134,13 +137,13 @@ header
 .section
     padding: 10rem 0
     &.intro
-        padding: 5rem 0
+        padding: 3rem 0
         p
             font-size: 1.5rem
     &.products
-        padding: 5rem 0
+        padding: 3rem 0
         .wrap
-            padding: 5rem 0
+            padding: 3rem 0
             background: #eee
         .product
             background: #fff
@@ -155,9 +158,9 @@ header
         .row > div:last-of-type .product
             border-top-right-radius: 6rem
     &.carousel
-        padding: 5rem 0 0 0
+        padding: 3rem 0 0 0
         .wrap
-            height: 20rem
+            height: 14rem
             position: relative
             display: flex
             justify-content: center
@@ -195,7 +198,7 @@ header
                 top: 0
                 left: 0
     &.contact
-        padding: 5rem 0
+        padding: 3rem 0
         overflow: hidden
         position: relative
         color: #fff
@@ -211,6 +214,18 @@ header
             label
                 font-weight: bold
                 color: #6a737c
+            div.required
+                position: relative
+                &::after
+                    content: ""
+                    display: block
+                    background: #ff5e00
+                    width: 0.25rem
+                    height: 0.25rem
+                    border-radius: 0.25rem
+                    top: 0.25rem
+                    right: 0.25rem
+                    position: absolute
             .btn-secondary
                 border-width: 2px
                 color: #6b747d
@@ -223,7 +238,7 @@ header
                     color: #fff
                     background-color: #55b436
                     border-color: #4b992b
-            #zip-code
+            .zip-code
                 margin-right: 15px
             .roof-scan
                 overflow: hidden
@@ -266,7 +281,7 @@ header
 
 footer
     display: flex
-    padding: 5rem
+    padding: 3rem
     background: #463c3a
     color: #fff
     p

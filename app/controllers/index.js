@@ -68,6 +68,11 @@ export default Controller.extend({
     carouselIndex: 1,
     wantScan: false,
 
+    init() {
+        this._super(...arguments)
+        this.set('email', {newsletter: true});
+    },
+
     actions: {
         slideChanged(index) {
             // index seems bugged, correct manually
