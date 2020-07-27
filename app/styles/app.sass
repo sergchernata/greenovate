@@ -45,6 +45,9 @@ header
     background: #fff
     border-bottom: 2px solid #4b9a2b
     z-index: 10
+    .cta
+        box-shadow: 0 2px 6px rgb(86 180 55 / 0.5)
+        font-weight: bold
     img
         display: block
         width: 12rem
@@ -145,10 +148,15 @@ header
     &.carousel
         padding: 5rem 0 0 0
         .wrap
+            height: 20rem
             position: relative
-            padding: 5rem 0
+            display: flex
+            justify-content: center
+            align-items: center
             background: $primary
             color: #fff
+            .row > div
+                position: static
         .index
             display: flex
             align-items: center
@@ -156,8 +164,9 @@ header
             width: 5rem
             height: 5rem
             position: absolute
-            top: -7.5rem
-            left: -5rem
+            top: -2.5rem
+            left: -25rem
+            margin-left: 50%
             font-size: 2.5rem
             line-height: 2.5rem
             font-weight: bold
@@ -187,6 +196,22 @@ header
             border-radius: 0.5rem
             color: #37383B
             padding: 2rem
+            box-shadow: 0 8px 16px rgba(75,153,43,0.1)
+            label
+                font-weight: bold
+                color: #6a737c
+            .btn-secondary
+                border-width: 2px
+                color: #6b747d
+                background-color: #d9dfe6
+                border-color: #d9dfe7
+                &:hover
+                    background: #d2d8e0
+                    border-color: #c7cdd6
+                &:not(:disabled):not(.disabled).active
+                    color: #fff
+                    background-color: #55b436
+                    border-color: #4b992b
         .details
             flex-direction: column
             justify-content: flex-end
@@ -223,6 +248,20 @@ footer
     color: #fff
     p
         text-align: center
+
+.carousel
+    h5
+        font-weight: bold
+    .carousel-item
+        img
+            width: 10rem
+            height: 10rem
+            display: flex
+            margin: 0 2rem 0 0
+    .carousel-control-prev
+        left: -8rem
+    .carousel-control-next
+        right: -8rem
 
 // ANIMATIONS
 =keyframes($name)

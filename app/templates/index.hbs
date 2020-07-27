@@ -70,9 +70,13 @@
                         as |car|>
                             {{#each this.slides as |slide|}}
                                 <car.slide>
-                                    <img src={{slide.img}}/>
-                                    <h5>{{slide.title}}</h5>
-                                    <p>{{slide.text}}</p>
+                                    <div class="d-flex flex-row align-items-center">
+                                        <img src="img/icons/{{slide.image}}" alt={{slide.alt}}/>
+                                        <div class="d-flex flex-column">
+                                            <h5>{{slide.title}}</h5>
+                                            <p>{{slide.text}}</p>
+                                        </div>
+                                    </div>
                                 </car.slide>
                             {{/each}}
                     </BsCarousel>
