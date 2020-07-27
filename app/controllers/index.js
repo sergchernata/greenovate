@@ -70,7 +70,7 @@ export default Controller.extend({
 
     init() {
         this._super(...arguments)
-        this.set('email', {newsletter: true});
+        this.set('email', {newsletter: false});
     },
 
     actions: {
