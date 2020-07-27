@@ -31,6 +31,9 @@ a
         border-width: 2px
         border-color: #4b992b
 
+.custom-control-label::before
+    border: #d9dfe6 solid 2px
+
 h3
     display: block
     margin: 0 auto 4rem auto
@@ -135,7 +138,7 @@ header
     z-index: -1
 
 .section
-    padding: 10rem 0
+    padding: 5rem 0
     &.intro
         padding: 3rem 0
         p
@@ -289,7 +292,22 @@ footer
     background: #463c3a
     color: #fff
     p
-        text-align: center
+        color: #887e7c
+    ul
+        margin: 0
+        padding: 0
+        list-style: none
+        .address
+            margin: 0.5rem 0 0 0
+        span
+            color: #887e7c
+    a
+        display: block
+        padding: 0.25rem
+        color: #fff
+        &:hover
+            text-decoration: none
+            color: #fffcc9
 
 .carousel
     &:focus, &:active

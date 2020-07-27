@@ -13,6 +13,9 @@
             <LinkTo @route="product.led-verlichting">
                 Led Verlichting
             </LinkTo>
+            <LinkTo @route="over-ons">
+                Over Ons
+            </LinkTo>
         </nav>
 
         <a class="btn btn-primary cta" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Get a Quote</a>
@@ -28,5 +31,50 @@
 </body>
 
 <footer>
-    <p>&copy; Greenovate 2020</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                <ul>
+                    <li>
+                        <span>Phone:</span> 06 373 364 82
+                    </li>
+                    <li>
+                        <span>Email:</span> info@greenovate.nl
+                    </li>
+                    <li class="address">
+                        <span>Address:</span><br/>
+                        Noordenveld 27<br/>
+                        8245 CP
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-5">
+                <ul>
+                    <li>
+                        <LinkTo @route="product.klimaattechniek">
+                            Klimaattechniek
+                        </LinkTo>
+                    </li>
+                    <li>
+                        <LinkTo @route="product.dakhuur">
+                            Dakverhuur
+                        </LinkTo>
+                    </li>
+                    <li>
+                        <LinkTo @route="product.led-verlichting">
+                            Led Verlichting
+                        </LinkTo>
+                    </li>
+                    <li>
+                        <LinkTo @route="over-ons">
+                            Over Ons
+                        </LinkTo>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-2">
+                <p>&copy; Greenovate 2020</p>
+            </div>
+        </div>
+    </div>
 </footer>
