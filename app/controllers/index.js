@@ -70,7 +70,10 @@ export default Controller.extend({
 
     actions: {
         slideChanged(index) {
-            this.set('carouselIndex', Math.abs(index + 1));
+            // index seems bugged, correct manually
+            index = index === -1 ? 9 : index;
+            index = index === 10 ? 0 : index;
+            this.set('carouselIndex', index + 1);
         }
     }
 });
