@@ -19,6 +19,11 @@ export default Controller.extend({
                 left: 100,
                 behavior: 'smooth'
             });
+        },
+        toggleNav() {
+            document.body.classList.toggle('open');
+            document.getElementById('mobile-nav-toggle').classList.toggle('open');
+            document.getElementById('mobile-nav').classList.toggle('open');
         }
     }
 });
