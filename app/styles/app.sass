@@ -9,6 +9,9 @@ body
     font-family: 'Titillium Web', sans-serif
     color: #37383B
     background: transparent
+    padding: 0
+    &.modal-open
+        padding-right: 1rem
 
 input.form-control, textarea.form-control
     background: #FAFAFA
@@ -20,7 +23,10 @@ input.form-control, textarea.form-control
 .mb0
     margin-bottom: 0
 
-a
+hr
+    border-top: 2px solid rgb(225 225 225)
+
+a, button
     transition: 0.5s all
     &:hover
         transition: 0.5s all
@@ -207,56 +213,13 @@ header
         color: #fff
         h3
             margin-bottom: 6rem
-        form
+        .quote-form-wrap
             border: 2px solid #4b9a2b
             background: #fff
             border-radius: 0.5rem
             color: #37383B
             padding: 2rem
             box-shadow: 0 8px 16px rgba(75,153,43,0.1)
-            input:invalid
-                box-shadow: none
-                &:focus
-                    box-shadow: 0 0 0 0.2rem rgba(85, 180, 54, 0.25)
-            label
-                font-weight: bold
-                color: #6a737c
-            div.required
-                position: relative
-                &::after
-                    content: ""
-                    display: block
-                    background: #ff5e00
-                    width: 0.25rem
-                    height: 0.25rem
-                    border-radius: 0.25rem
-                    top: 0.25rem
-                    right: 0.25rem
-                    position: absolute
-            .btn-secondary
-                border-width: 2px
-                color: #6b747d
-                background-color: #d9dfe6
-                border-color: #d9dfe7
-                &:hover
-                    background: #d2d8e0
-                    border-color: #c7cdd6
-                &:not(:disabled):not(.disabled).active
-                    color: #fff
-                    background-color: #55b436
-                    border-color: #4b992b
-            .zip-code
-                margin-right: 15px
-            .roof-scan
-                overflow: hidden
-                &.closed
-                    height: 0
-                    opacity: 0
-                    transition: 0.5s all
-                &.open
-                    height: 17.625rem
-                    opacity: 1
-                    transition: 0.5s all
         .details
             flex-direction: column
             justify-content: flex-end
@@ -269,6 +232,77 @@ header
                 margin: 0
                 padding: 0 0 0 1rem
                 max-width: 23rem
+
+.quote-form
+    input:invalid
+        box-shadow: none
+        &:focus
+            box-shadow: 0 0 0 0.2rem rgba(85, 180, 54, 0.25)
+    label
+        font-weight: bold
+        color: #6a737c
+    div.required
+        position: relative
+        &::after
+            content: ""
+            display: block
+            background: #ff5e00
+            width: 0.25rem
+            height: 0.25rem
+            border-radius: 0.25rem
+            top: 0.25rem
+            right: 0.25rem
+            position: absolute
+    .btn-secondary
+        border-width: 2px
+        color: #6b747d
+        background-color: #d9dfe6
+        border-color: #d9dfe7
+        &:hover
+            background: #d2d8e0
+            border-color: #c7cdd6
+        &:not(:disabled):not(.disabled).active
+            color: #fff
+            background-color: #55b436
+            border-color: #4b992b
+    .zip-code
+        margin-right: 15px
+    .roof-scan
+        overflow: hidden
+        &.closed
+            height: 0
+            opacity: 0
+            transition: 0.5s all
+        &.open
+            height: 17.625rem
+            opacity: 1
+            transition: 0.5s all
+
+#dakhuur-page, #klimaattechniek-page, #led-verlichting-page
+    hr
+        margin: 5rem 0
+    p
+        padding: 0 4rem
+    .intro
+        p
+            padding: 0
+            font-size: 1.5rem
+
+.get-a-quote
+    background: $primary url("../img/background-g.svg") no-repeat 50% 50%
+    padding: 3rem 0
+    button
+        background: #fff
+        color: #55b436
+        box-shadow: 0 8px 16px rgba(75,153,43,0.1)
+        &:hover, &:focus
+            color: $primary
+            background: #FFFCC9
+            box-shadow: 0 8px 16px rgba(75,153,43,0.2)
+        &:not(:disabled):not(.disabled):active
+            color: $primary
+            background: #f2fd99
+            box-shadow: 0 0 0 rgba(75,153,43,0)
 
 #bottom-decor
     position: absolute
