@@ -60,6 +60,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "ember-link-action": "^2.0.0",
     "ember-truth-helpers": "^2.1.0"
   }
 }
