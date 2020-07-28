@@ -1,0 +1,8 @@
+<BsModal @open={{this.showQuoteForm}} @onHidden={{action (mut this.showQuoteForm) false}} as |modal|>
+    <modal.header>
+        <h4>Get a Quote</h4>
+    </modal.header>
+    <modal.body>
+        <QuoteForm />
+    </modal.body>
+</BsModal>

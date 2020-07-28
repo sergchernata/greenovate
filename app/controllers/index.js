@@ -66,12 +66,6 @@ const slides = [
 export default Controller.extend({
     slides: slides,
     carouselIndex: 1,
-    wantScan: false,
-
-    init() {
-        this._super(...arguments)
-        this.set('email', {newsletter: false});
-    },
 
     actions: {
         slideChanged(index) {
