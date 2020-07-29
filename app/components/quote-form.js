@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { task, timeout } from "ember-concurrency";
+import { task } from "ember-concurrency";
 import axios from 'axios';
 
 export default Component.extend({

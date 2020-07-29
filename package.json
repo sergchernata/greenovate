@@ -45,6 +45,7 @@
     "ember-mdi": "^0.8.2",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^7.0.0",
+    "ember-router-scroll": "^3.3.2",
     "ember-source": "~3.15.0",
     "ember-welcome-page": "^4.0.0",
     "eslint-plugin-ember": "^7.7.1",
