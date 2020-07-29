@@ -60,6 +60,8 @@
     "edition": "octane"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "ember-concurrency": "^1.2.1",
     "ember-link-action": "^2.0.0",
     "ember-truth-helpers": "^2.1.0"
   }
