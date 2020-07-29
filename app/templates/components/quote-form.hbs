@@ -1,4 +1,9 @@
-<form {{action 'validateEmail' on='submit'}}>
+<form {{action 'validate' on='submit'}}>
+    <div class="sent{{if this.sent ' success' ''}}">
+        <button class="btn btn-light" type="button" {{action 'closeSent'}}><MdIcon @icon="close"/></button>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+        <h5>Your message has been sent!</h5>
+    </div>
     <div class="form-group row">
         <label for="first-name" class="col-sm-4 col-form-label">First Name</label>
         <div class="col-sm-8">
@@ -41,17 +46,17 @@
         <label for="name" class="col-sm-4 col-form-label">Want a roof scan?</label>
         <div class="col-sm-8">
             <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-                <label class="btn btn-secondary{{if this.wantScan ' active' ''}}" {{action (mut this.wantScan) true}}>
-                    <Input id="scan-yes" @type="radio" name="scan" @checked={{this.wantScan}} /> Yes
+                <label class="btn btn-secondary{{if this.email.wantScan ' active' ''}}" {{action (mut this.email.wantScan) true}}>
+                    <Input id="scan-yes" @type="radio" name="scan" @checked={{this.email.wantScan}} /> Yes
                 </label>
-                <label class="btn btn-secondary{{if (not this.wantScan) ' active' ''}}" {{action (mut this.wantScan) false}}>
-                    <Input id="scan-yes" @type="radio" name="scan" @checked={{not this.wantScan}} /> No
+                <label class="btn btn-secondary{{if (not this.email.wantScan) ' active' ''}}" {{action (mut this.email.wantScan) false}}>
+                    <Input id="scan-yes" @type="radio" name="scan" @checked={{not this.email.wantScan}} /> No
                 </label>
             </div>
         </div>
     </div>
 
-    <div class="roof-scan {{if this.wantScan 'open' 'closed'}}">
+    <div class="roof-scan {{if this.email.wantScan 'open' 'closed'}}">
         <div class="form-group row">
             <div class="col-12">
                 <div class="alert alert-warning nm" role="alert">
@@ -99,21 +104,26 @@
     <div class="form-group row">
         <label for="message" class="col-sm-4 col-form-label">Anything else?</label>
         <div class="col-sm-8">
-            <textarea id="message" name="message" class="form-control" placeholder="Your message or additional details..."></textarea>
+            <Textarea id="message" name="message" @value={{this.email.message}} class="form-control" placeholder="Your message or additional details..."/>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-12 col-md-8 offset-md-4">
             <div class="custom-control custom-checkbox">
-                <Input id="newsletter" class="custom-control-input" @type="checkbox" name="newsletter" @checked={{this.email.newsletter}} />
-                <label class="custom-control-label" for="newsletter">Send me an occasional newsletter.</label>
+                <Input id="newsletter" class="custom-control-input" @type="checkbox" name="newsletter" @checked={{this.email.wantNews}} />
+                <label class="custom-control-label" for="newsletter" {{action (mut this.email.wantNews) (not this.email.wantNews)}}>Send me an occasional newsletter.</label>
             </div>
         </div>
     </div>
     <div class="form-group row mb0">
         <div class="col-12 col-md-8 offset-md-4">
             <div class="d-flex">
-                <button type="submit" class="btn btn-primary btn-block">Send</button>
+                {{#if this.error}}
+                    <div class="alert alert-danger mb-2" role="alert">
+                        {{this.error}}
+                    </div>
+                {{/if}}
+                <button type="submit" disabled={{this.submit.isRunning}} class="btn btn-primary btn-block">Send</button>
             </div>
         </div>
     </div>

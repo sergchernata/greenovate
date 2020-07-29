@@ -10,13 +10,17 @@ body
     color: #37383B
     background: transparent
     padding: 0
+    margin: 0
     &.modal-open
         padding-right: 1rem
     &.open
-        margin: 0
-        height: 100vh
-        max-height: 100vh
-        overflow: hidden
+        height: 100%
+        max-height: 100%
+        overflow-y: hidden
+
+#wrap
+    position: relative
+    overflow-x: hidden
 
 input.form-control, textarea.form-control
     background: #FAFAFA
@@ -261,6 +265,7 @@ header
                 max-width: 23rem
 
 .quote-form
+    position: relative
     input:invalid
         box-shadow: none
         &:focus
@@ -304,6 +309,75 @@ header
             height: 17.625rem
             opacity: 1
             transition: 0.5s all
+    .sent
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        background: #fff
+        z-index: 0
+        opacity: 0
+        transition: 0.5s all
+        h5
+            opacity: 0
+        &.success
+            z-index: 10
+            opacity: 1
+            transition: 0.5s all
+            h5
+                -webkit-animation: fade-in-slide-in-bottom 1s
+                -moz-animation: fade-in-slide-in-bottom 1s
+                -ms-animation: fade-in-slide-in-bottom 1s
+                -o-animation: fade-in-slide-in-bottom 1s
+                animation: fade-in-slide-in-bottom 1s
+                animation-fill-mode: forwards
+                -webkit-animation-delay: 1s
+                -moz-animation-delay: 1s
+                -ms-animation-delay: 1s
+                -o-animation-delay: 1s
+                animation-delay: 1s
+            .checkmark__circle
+                -webkit-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+                -moz-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+                -ms-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+                -o-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+                animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+                -webkit-animation-delay: 1s
+                -moz-animation-delay: 1s
+                -ms-animation-delay: 1s
+                -o-animation-delay: 1s
+                animation-delay: 1s
+            .checkmark
+                -webkit-animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                -moz-animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                -ms-animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                -o-animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                -webkit-animation-delay: 1s
+                -moz-animation-delay: 1s
+                -ms-animation-delay: 1s
+                -o-animation-delay: 1s
+                animation-delay: 1s
+            .checkmark__check
+                -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+                -moz-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+                -ms-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+                -o-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+                animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+                -webkit-animation-delay: 1s
+                -moz-animation-delay: 1s
+                -ms-animation-delay: 1s
+                -o-animation-delay: 1s
+                animation-delay: 1s
+        button
+            position: absolute
+            right: 0
+            top: 0
 
 #dakhuur-page, #klimaattechniek-page, #led-verlichting-page
     h3
@@ -423,7 +497,7 @@ footer
     bottom: 0
     left: 0
     right: 0
-    padding: 1rem 2rem 2rem 2rem
+    padding: 0 2rem 2rem 2rem
     background: $primary
     font-size: 1.5rem
     z-index: 100
@@ -447,10 +521,37 @@ footer
         padding: 1rem
         display: block
 
+.checkmark__circle
+    stroke-dasharray: 166
+    stroke-dashoffset: 166
+    stroke-width: 2
+    stroke-miterlimit: 10
+    stroke: #7ac142
+    fill: none
+
+.checkmark
+    width: 56px
+    height: 56px
+    border-radius: 50%
+    display: block
+    stroke-width: 2
+    stroke: #fff
+    stroke-miterlimit: 10
+    margin: 10% auto
+    box-shadow: inset 0px 0px 0px #7ac142
+
+.checkmark__check
+    transform-origin: 50% 50%
+    stroke-dasharray: 48
+    stroke-dashoffset: 48
+
 // MOBILE
 @include media-breakpoint-down(sm)
     h3
         font-size: 1.5rem
+    body
+        &.modal-open
+            padding-right: 0
     #banner
         padding: 4rem 0
         min-height: 20rem
@@ -492,14 +593,37 @@ footer
                 left: -1rem
             .carousel-control-next
                 right: -1rem
+            .index
+                height: 3rem
+                width: 3rem
+                font-size: 1.5rem
+                line-height: 1.5rem
+                left: 1.5rem
+                top: -1.5rem
+                margin-left: 0
+                &::before
+                    border-radius: 0.5rem
         &.contact
             h3
                 margin-bottom: 4rem
             h5
                 margin: 1rem 0 0 0
+            .quote-form-wrap
+                padding: 0.5rem 1rem
+
     .quote-form
         .form-group
             margin-bottom: 0.5rem
+        .roof-scan
+            &.open
+                height: 24.62rem
+                opacity: 1
+                transition: 0.5s all
+    footer
+        padding: 1rem
+        a
+            padding-left: 0
+            padding-right: 0
 
 // ANIMATIONS
 =keyframes($name)
@@ -537,3 +661,25 @@ footer
     100%
         opacity: 1
         transform: translateX(0)
+
++keyframes(fade-in-slide-in-bottom)
+    0%
+        opacity: 0
+        transform: translateY(-2rem)
+    100%
+        opacity: 1
+        transform: translateY(0)
+
++keyframes(stroke)
+    100%
+        stroke-dashoffset: 0
+
++keyframes(scale)
+    0%, 100%
+        transform: none
+    50%
+        transform: scale3d(1.1, 1.1, 1)
+
++keyframes(fill)
+    100%
+        box-shadow: inset 0px 0px 0px 30px #7ac142

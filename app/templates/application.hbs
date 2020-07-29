@@ -1,115 +1,115 @@
-<header>
-    <div class="container d-flex justify-content-between align-items-center">
-        <LinkTo @route="index">
-            <img src="/img/logo.svg" alt="Greenovate logo" />
-        </LinkTo>
-        <nav class="navbar-nav ml-auto d-none d-md-flex flex-direction-row d-none d-md-block">
-            <LinkTo @route="product.klimaattechniek">
-                Klimaattechniek
+<div id="wrap">
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <LinkTo @route="index">
+                <img src="/img/logo.svg" alt="Greenovate logo" />
             </LinkTo>
-            <LinkTo @route="product.dakhuur">
-                Dakverhuur
-            </LinkTo>
-            <LinkTo @route="product.led-verlichting">
-                Led Verlichting
-            </LinkTo>
-            <LinkTo @route="over-ons">
-                Over Ons
-            </LinkTo>
-        </nav>
-        {{#if (eq currentRouteName 'index')}}
-            <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Get a Quote</a>
-        {{else}}
-            <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action (mut this.showQuoteForm) true}}>Get a Quote</a>
-        {{/if}}
+            <nav class="navbar-nav ml-auto d-none d-md-flex flex-direction-row d-none d-md-block">
+                <LinkTo @route="product.klimaattechniek">
+                    Klimaattechniek
+                </LinkTo>
+                <LinkTo @route="product.dakhuur">
+                    Dakverhuur
+                </LinkTo>
+                <LinkTo @route="product.led-verlichting">
+                    Led Verlichting
+                </LinkTo>
+                <LinkTo @route="over-ons">
+                    Over Ons
+                </LinkTo>
+            </nav>
+            {{#if (eq currentRouteName 'index')}}
+                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Get a Quote</a>
+            {{else}}
+                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action (mut this.showQuoteForm) true}}>Get a Quote</a>
+            {{/if}}
 
-        <button data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation" class="navbar-toggler collapsed d-sm-block d-md-none" id="mobile-nav-toggle" type="button" {{action 'toggleNav'}}>
-            <MdIcon @icon="menu"/>
-        </button>
-    </div>
-</header>
+            <button data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation" class="navbar-toggler collapsed d-sm-block d-md-none" id="mobile-nav-toggle" type="button" {{action 'toggleNav'}}>
+                <MdIcon @icon="menu"/>
+            </button>
+        </div>
+    </header>
 
-<body>
     {{outlet}}
-</body>
 
-<footer>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-5">
-                <ul>
-                    <li>
-                        <span>Phone:</span> 06 373 364 82
-                    </li>
-                    <li>
-                        <span>Email:</span> info@greenovate.nl
-                    </li>
-                    <li class="address">
-                        <span>Address:</span><br/>
-                        Noordenveld 27<br/>
-                        8245 CP
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-5">
-                <ul>
-                    <li>
-                        <LinkTo @route="product.klimaattechniek">
-                            Klimaattechniek
-                        </LinkTo>
-                    </li>
-                    <li>
-                        <LinkTo @route="product.dakhuur">
-                            Dakverhuur
-                        </LinkTo>
-                    </li>
-                    <li>
-                        <LinkTo @route="product.led-verlichting">
-                            Led Verlichting
-                        </LinkTo>
-                    </li>
-                    <li>
-                        <LinkTo @route="over-ons">
-                            Over Ons
-                        </LinkTo>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-2">
-                <p>&copy; Greenovate 2020</p>
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-5">
+                    <ul>
+                        <li>
+                            <span>Phone:</span> 06 373 364 82
+                        </li>
+                        <li>
+                            <span>Email:</span> info@greenovate.nl
+                        </li>
+                        <li class="address">
+                            <span>Address:</span><br/>
+                            Noordenveld 27<br/>
+                            8245 CP
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-5">
+                    <ul>
+                        <li>
+                            <LinkTo @route="product.klimaattechniek">
+                                Klimaattechniek
+                            </LinkTo>
+                        </li>
+                        <li>
+                            <LinkTo @route="product.dakhuur">
+                                Dakverhuur
+                            </LinkTo>
+                        </li>
+                        <li>
+                            <LinkTo @route="product.led-verlichting">
+                                Led Verlichting
+                            </LinkTo>
+                        </li>
+                        <li>
+                            <LinkTo @route="over-ons">
+                                Over Ons
+                            </LinkTo>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p>&copy; Greenovate 2020</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<aside id="mobile-nav">
+    <aside id="mobile-nav">
 
-    <LinkTo @route="index" @invokeAction={{action 'toggleNav'}}>
-        <img src="/img/logo-light.svg" alt="Greenovate logo" />
-    </LinkTo>
+        <LinkTo @route="index" @invokeAction={{action 'toggleNav'}}>
+            <img src="/img/logo-light.svg" alt="Greenovate logo" />
+        </LinkTo>
 
-    <ul>
-        <li>
-            <LinkTo @route="product.klimaattechniek" @invokeAction={{action 'toggleNav'}}>
-                Klimaattechniek
-            </LinkTo>
-        </li>
-        <li>
-            <LinkTo @route="product.dakhuur" @invokeAction={{action 'toggleNav'}}>
-                Dakverhuur
-            </LinkTo>
-        </li>
-        <li>
-            <LinkTo @route="product.led-verlichting" @invokeAction={{action 'toggleNav'}}>
-                Led Verlichting
-            </LinkTo>
-        </li>
-        <li>
-            <LinkTo @route="over-ons" @invokeAction={{action 'toggleNav'}}>
-                Over Ons
-            </LinkTo>
-        </li>
-    </ul>
-</aside>
+        <ul>
+            <li>
+                <LinkTo @route="product.klimaattechniek" @invokeAction={{action 'toggleNav'}}>
+                    Klimaattechniek
+                </LinkTo>
+            </li>
+            <li>
+                <LinkTo @route="product.dakhuur" @invokeAction={{action 'toggleNav'}}>
+                    Dakverhuur
+                </LinkTo>
+            </li>
+            <li>
+                <LinkTo @route="product.led-verlichting" @invokeAction={{action 'toggleNav'}}>
+                    Led Verlichting
+                </LinkTo>
+            </li>
+            <li>
+                <LinkTo @route="over-ons" @invokeAction={{action 'toggleNav'}}>
+                    Over Ons
+                </LinkTo>
+            </li>
+        </ul>
+    </aside>
 
-<QuoteModal @showQuoteForm={{this.showQuoteForm}}/>
+    <QuoteModal @showQuoteForm={{this.showQuoteForm}}/>
+</div>
