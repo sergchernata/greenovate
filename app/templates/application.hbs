@@ -112,4 +112,12 @@
     </aside>
 
     <QuoteModal @showQuoteForm={{this.showQuoteForm}}/>
+
+    <div id="popout" class="{{if this.hidePopout 'hide' ''}}">
+        <a href="#contact-us" {{action (mut this.showQuoteForm) true}}>
+            {{!-- <img src="" alt="request a roof scan"> --}}
+            <p>Wilt u weten <strong>wat uw dak<br/>waard is?</strong> Klik dan hier.</p>
+        </a>
+        <button class="btn btn-danger" type="button" {{action (mut this.hidePopout) true}}><MdIcon @icon="close"/></button>
+    </div>
 </div>
