@@ -14,14 +14,11 @@
                 <LinkTo @route="product.led-verlichting">
                     Led Verlichting
                 </LinkTo>
-                <LinkTo @route="over-ons">
-                    Over Ons
-                </LinkTo>
             </nav>
             {{#if (eq currentRouteName 'index')}}
-                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Get a Quote</a>
+                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action 'scrollTo' 'contact-us'}}>Offerte aanvragen</a>
             {{else}}
-                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action (mut this.showQuoteForm) true}}>Get a Quote</a>
+                <a class="btn btn-primary cta d-none d-md-block" href="#contact-us" {{action (mut this.showQuoteForm) true}}>Offerte aanvragen</a>
             {{/if}}
 
             <button data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation" class="navbar-toggler collapsed d-sm-block d-md-none" id="mobile-nav-toggle" type="button" {{action 'toggleNav'}}>
@@ -67,14 +64,12 @@
                                 Led Verlichting
                             </LinkTo>
                         </li>
-                        <li>
-                            <LinkTo @route="over-ons">
-                                Over Ons
-                            </LinkTo>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-2">
+                    <LinkTo @route="privacyverklaring">
+                        Privacyverklaring
+                    </LinkTo>
                     <p>&copy; Greenovate 2020</p>
                 </div>
             </div>
@@ -101,11 +96,6 @@
             <li>
                 <LinkTo @route="product.led-verlichting" @invokeAction={{action 'toggleNav'}}>
                     Led Verlichting
-                </LinkTo>
-            </li>
-            <li>
-                <LinkTo @route="over-ons" @invokeAction={{action 'toggleNav'}}>
-                    Over Ons
                 </LinkTo>
             </li>
         </ul>

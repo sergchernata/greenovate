@@ -177,6 +177,8 @@ header
         padding: 3rem 0
         p
             font-size: 1.5rem
+            strong
+                font-size: 2rem
     &.products
         padding: 3rem 0
         .wrap
@@ -188,6 +190,8 @@ header
             border-radius: 0.5rem
             padding: 2rem
             box-shadow: 0 4px 14px rgba(42, 52, 59, 0.05)
+            img
+                margin: -2rem 0
             h4
                 color: $primary
                 font-weight: bold
@@ -385,23 +389,28 @@ header
         &::after
             display: none
     hr
-        margin: 5rem 0
+        margin: 4rem 0
     p
         font-size: 1.5rem
         margin: 0
+    img
+        max-width: 60%
+        margin: -2rem 0 -2rem -2rem
     .row
-        .col-6:last-of-type
+        .col-md-6:last-of-type
             h3
                 text-align: left
+            p, h3, img
                 padding: 0 0 0 4rem
-            p
-                padding: 0 0 0 4rem
-        .col-6:first-of-type
+        .col-md-6:first-of-type
             h3
                 text-align: left
-            p
+            p, h3, img
                 padding: 0 4rem 0 0
     .intro
+        img
+            max-width: 100%
+            margin: -6rem auto
         p
             text-align: center
 
@@ -615,6 +624,30 @@ footer
         height: 75rem
         img
             display: none
+    #dakhuur-page, #klimaattechniek-page, #led-verlichting-page
+        hr
+            margin: 2rem 0 0 0
+        p
+            font-size: 1.5rem
+            margin: 0
+        img
+            max-width: 100%
+            margin: 0 auto -3rem auto
+        .row
+            .col-md-6:last-of-type
+                h3
+                    text-align: center
+                p, h3, img
+                    padding: 0
+            .col-md-6:first-of-type
+                h3
+                    text-align: center
+                p, h3, img
+                    padding: 0
+        .intro
+            img
+                max-width: 100%
+                margin: -3rem auto
     .section
         padding-top: 2rem
         padding-bottom: 2rem
