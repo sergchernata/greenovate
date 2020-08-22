@@ -5,7 +5,7 @@
         <h5>Your message has been sent!</h5>
     </div>
     <div class="form-group row">
-        <label for="first-name" class="col-sm-4 col-form-label">First Name</label>
+        <label for="first-name" class="col-sm-4 col-form-label">Voornaam</label>
         <div class="col-sm-8">
             <div class="{{if (is-empty this.email.firstName) 'required' ''}}">
                 <Input id="first-name" name="first-name" @value={{this.email.firstName}} @type="text" class="form-control" placeholder="John" required={{true}}/>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="last-name" class="col-sm-4 col-form-label">Last Name</label>
+        <label for="last-name" class="col-sm-4 col-form-label">Achternaam</label>
         <div class="col-sm-8">
             <div class="{{if (is-empty this.email.lastName) 'required' ''}}">
                 <Input id="last-name" name="last-name" @value={{this.email.lastName}} @type="text" class="form-control" placeholder="Smith" required={{true}}/>
@@ -24,33 +24,33 @@
         <label for="email" class="col-sm-4 col-form-label">Email</label>
         <div class="col-sm-8">
             <div class="{{if (is-empty this.email.email) 'required' ''}}">
-                <Input id="email" name="email" @value={{this.email.email}} @type="email" class="form-control" placeholder="name@company.com" required={{true}}/>
+                <Input id="email" name="email" @value={{this.email.email}} @type="email" class="form-control" placeholder="naam@bedrijf.nl" required={{true}}/>
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label for="phone" class="col-sm-4 col-form-label">Phone Number</label>
+        <label for="phone" class="col-sm-4 col-form-label">Telefoonnummer</label>
         <div class="col-sm-8">
             <Input id="phone" name="phone" @value={{this.email.phone}} @type="tel" class="form-control" placeholder="(123) 456-5934" />
         </div>
     </div>
     <div class="form-group row">
-        <label for="subject" class="col-sm-4 col-form-label">Subject</label>
+        <label for="subject" class="col-sm-4 col-form-label">Onderwerp</label>
         <div class="col-sm-8">
             <div class="{{if (is-empty this.email.subject) 'required' ''}}">
-                <Input id="subject" name="subject" @value={{this.email.subject}} @type="text" class="form-control" placeholder="What is this about?" required={{true}}/>
+                <Input id="subject" name="subject" @value={{this.email.subject}} @type="text" class="form-control" placeholder="Waar gaat het over?" required={{true}}/>
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label for="name" class="col-sm-4 col-form-label">Want a roof scan?</label>
+        <label for="name" class="col-sm-4 col-form-label">Dakscan aanvragen?</label>
         <div class="col-sm-8">
             <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
                 <label class="btn btn-secondary{{if this.email.wantScan ' active' ''}}" {{action (mut this.email.wantScan) true}}>
-                    <Input id="scan-yes" @type="radio" name="scan" @checked={{this.email.wantScan}} /> Yes
+                    <Input id="scan-yes" @type="radio" name="scan" @checked={{this.email.wantScan}} /> Ja
                 </label>
                 <label class="btn btn-secondary{{if (not this.email.wantScan) ' active' ''}}" {{action (mut this.email.wantScan) false}}>
-                    <Input id="scan-yes" @type="radio" name="scan" @checked={{not this.email.wantScan}} /> No
+                    <Input id="scan-yes" @type="radio" name="scan" @checked={{not this.email.wantScan}} /> Nee
                 </label>
             </div>
         </div>
@@ -60,12 +60,12 @@
         <div class="form-group row">
             <div class="col-12">
                 <div class="alert alert-warning nm" role="alert">
-                    We require a minimum of 3500 m<sup>2</sup>.
+                    Alleen daken groter dan 3.500 m<sup>2</sup>.
                 </div>
             </div>
         </div>
         <div class="form-group row">
-            <label for="roof" class="col-sm-4 col-form-label">Roof space m<sup>2</sup></label>
+            <label for="roof" class="col-sm-4 col-form-label">Aantal m<sup>2</sup></label>
             <div class="col-sm-8">
                 <div class="{{if (is-empty this.email.roofSize) 'required' ''}}">
                     <Input id="roof" name="roof" @value={{this.email.roofSize}} @type="number" class="form-control" placeholder="3500" required={{this.wantScan}}/>
@@ -73,45 +73,45 @@
             </div>
         </div>
         <div class="form-group row address">
-            <label for="zip-code" class="col-sm-4 col-form-label">Address</label>
+            <label for="zip-code" class="col-sm-4 col-form-label">Adres</label>
             <div class="col-sm-8 d-flex">
                 <div class="{{if (is-empty this.email.zip) 'required ' ''}}zip-code">
-                    <Input id="zip-code" name="zip-code" @value={{this.email.zip}} @type="text" class="form-control" placeholder="Zip Code" />
+                    <Input id="zip-code" name="zip-code" @value={{this.email.zip}} @type="text" class="form-control" placeholder="Postcode" />
                 </div>
                 <div class="{{if (is-empty this.email.houseNumber) 'required' ''}}">
-                    <Input id="house-number" name="house-number" @value={{this.email.houseNumber}} @type="text" class="form-control" placeholder="House Number" required={{this.wantScan}}/>
+                    <Input id="house-number" name="house-number" @value={{this.email.houseNumber}} @type="text" class="form-control" placeholder="Huisnummer" required={{this.wantScan}}/>
                 </div>
             </div>
         </div>
         <div class="form-group row">
-            <label for="street" class="col-sm-4 col-form-label">Street</label>
+            <label for="street" class="col-sm-4 col-form-label">Straat</label>
             <div class="col-sm-8">
                 <div class="{{if (is-empty this.email.street) 'required' ''}}">
-                    <Input id="street" name="street" @value={{this.email.street}} @type="text" class="form-control" placeholder="Street name" required={{this.wantScan}}/>
+                    <Input id="street" name="street" @value={{this.email.street}} @type="text" class="form-control" placeholder="Straatnaam" required={{this.wantScan}}/>
                 </div>
             </div>
         </div>
         <div class="form-group row">
-            <label for="city" class="col-sm-4 col-form-label">City</label>
+            <label for="city" class="col-sm-4 col-form-label">Plaats</label>
             <div class="col-sm-8">
                 <div class="{{if (is-empty this.email.city) 'required' ''}}">
-                    <Input id="city" name="city" @value={{this.email.city}} @type="text" class="form-control" placeholder="Name of the city" required={{this.wantScan}}/>
+                    <Input id="city" name="city" @value={{this.email.city}} @type="text" class="form-control" placeholder="Naam stad/dorp" required={{this.wantScan}}/>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="form-group row">
-        <label for="message" class="col-sm-4 col-form-label">Anything else?</label>
+        <label for="message" class="col-sm-4 col-form-label">Vraag of opmerking</label>
         <div class="col-sm-8">
-            <Textarea id="message" name="message" @value={{this.email.message}} class="form-control" placeholder="Your message or additional details..."/>
+            <Textarea id="message" name="message" @value={{this.email.message}} class="form-control" placeholder="Vertel ons meer over uw project, behoeften en tijdlijn."/>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-12 col-md-8 offset-md-4">
             <div class="custom-control custom-checkbox">
                 <Input id="newsletter" class="custom-control-input" @type="checkbox" name="newsletter" @checked={{this.email.wantNews}} />
-                <label class="custom-control-label" for="newsletter" {{action (mut this.email.wantNews) (not this.email.wantNews)}}>Send me an occasional newsletter.</label>
+                <label class="custom-control-label" for="newsletter" {{action (mut this.email.wantNews) (not this.email.wantNews)}}>Schrijf me in voor de nieuwsbrief.</label>
             </div>
         </div>
     </div>
@@ -123,7 +123,7 @@
                         {{this.error}}
                     </div>
                 {{/if}}
-                <button type="submit" disabled={{this.submit.isRunning}} class="btn btn-primary btn-block">Send</button>
+                <button type="submit" disabled={{this.submit.isRunning}} class="btn btn-primary btn-block">Versturen</button>
             </div>
         </div>
     </div>
