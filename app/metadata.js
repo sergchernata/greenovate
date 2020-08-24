@@ -1,5 +1,5 @@
 const metadata = {
-    index: {
+    home: {
         title: 'Greenovate',
         description: 'Home page...',
     },
