@@ -1,22 +1,22 @@
 import Route from '@ember/routing/route';
-import { metadata } from '../../metadata';
+import { metadata } from '../metadata';
 
-export default class ProductKlimaattechniekRoute extends Route {
+export default Route.extend({
   headTags() {
     return [
       {
         type: 'title',
         tagId: 'meta-title-tag',
-        content: metadata.products.dakhuur.title,
+        content: metadata.index.title,
       },
       {
         type: 'meta',
         tagId: 'meta-description-tag',
         attrs: {
           name: 'description',
-          content: metadata.products.dakhuur.description,
+          content: metadata.index.description,
         }
       }
     ];
   }
-}
+});
