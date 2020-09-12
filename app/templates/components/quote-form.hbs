@@ -60,7 +60,7 @@
         <div class="form-group row">
             <div class="col-12">
                 <div class="alert alert-warning nm" role="alert">
-                    Alleen daken groter dan 3.500 m<sup>2</sup>.
+                    Alleen daken groter dan 2.000 m<sup>2</sup>.
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
             <label for="roof" class="col-sm-4 col-form-label">Aantal m<sup>2</sup></label>
             <div class="col-sm-8">
                 <div class="{{if (is-empty this.email.roofSize) 'required' ''}}">
-                    <Input id="roof" name="roof" @value={{this.email.roofSize}} @type="number" class="form-control" placeholder="3500" required={{this.wantScan}}/>
+                    <Input id="roof" name="roof" @value={{this.email.roofSize}} @type="number" class="form-control" placeholder="2.000" required={{this.wantScan}}/>
                 </div>
             </div>
         </div>
